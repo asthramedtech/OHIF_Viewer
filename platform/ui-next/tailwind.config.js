@@ -56,9 +56,11 @@ module.exports = {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
         },
+
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
+          dark: 'hsl(var(--secondary-dark))', // Add this
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
@@ -100,19 +102,20 @@ module.exports = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      // Teal Color Theme - Black backgrounds with teal accents
       bkg: {
-        low: '#050615',
-        med: '#090C29',
-        full: '#041C4A',
+        low: '#000000', // Pure black
+        med: '#0a0a0a', // Very dark gray
+        full: '#1a1a1a', // Dark gray
       },
       info: {
-        primary: '#FFFFFF',
-        secondary: '#7BB2CE',
+        primary: '#FFFFFF', // Keep white for contrast
+        secondary: '#80CBC4', // Teal for secondary text
       },
       actions: {
-        primary: '#348CFD',
-        highlight: '#5ACCE6',
-        hover: 'rgba(52, 140, 253, 0.2)',
+        primary: '#80CBC4', // Teal for primary actions
+        highlight: '#B2DFDB', // Lighter teal for highlights
+        hover: 'rgba(128, 203, 196, 0.2)', // Teal with transparency for hover states
       },
     },
   },
