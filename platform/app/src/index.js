@@ -42,27 +42,31 @@ function getConfigFromURL() {
   return null;
 }
 
-// @ts-ignore
 loadDynamicConfig(window.config).then(config_json => {
   // Reset Dynamic config if defined
   if (config_json !== null) {
-    // @ts-ignore
     window.config = config_json;
+  }
+
+  // Ensure routerBasename is set (fix for Router error)
+  if (!window.config) {
+    window.config = {};
+  }
+
+  if (!window.config.routerBasename) {
+    window.config.routerBasename = '/';
   }
 
   // Get config from URL and merge with window.config
   const urlConfig = getConfigFromURL();
 
-  // @ts-ignore
   if (urlConfig && window.config) {
     // Only update specific properties, preserve the rest
     if (urlConfig.defaultDataSourceName) {
-      // @ts-ignore
       window.config.defaultDataSourceName = urlConfig.defaultDataSourceName;
     }
 
     if (urlConfig.dataSources) {
-      // @ts-ignore
       window.config.dataSources = urlConfig.dataSources;
     }
   }
@@ -72,15 +76,15 @@ loadDynamicConfig(window.config).then(config_json => {
    * In the future appConfiguration may contain modes added at runtime.
    *  */
   const appProps = {
-    // @ts-ignore
-    config: window ? window.config : {},
+    config: window.config || {},
     defaultExtensions,
     defaultModes,
   };
 
+  console.log('Final config being passed to App:', appProps.config);
+
   const container = document.getElementById('root');
 
   const root = createRoot(container);
-  // @ts-ignore
   root.render(React.createElement(App, appProps));
 });
