@@ -91,7 +91,7 @@ window.config = {
       ],
     },
   ],
-  defaultDataSourceName: 'ohif',
+  defaultDataSourceName: 'asthra-orthanc',
   dataSources: [
     {
       namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
@@ -110,9 +110,6 @@ window.config = {
         supportsWildcard: false,
         staticWado: true,
         singlepart: 'bulkdata,video',
-        // whether the data source should use retrieveBulkData to grab metadata,
-        // and in case of relative path, what would it be relative to, options
-        // are in the series level or study level (some servers like series some study)
         bulkDataURI: {
           enabled: true,
           relativeResolution: 'studies',
@@ -151,7 +148,7 @@ window.config = {
 
     {
       namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
-      sourceName: 'orthanc-host',
+      sourceName: 'asthra-orthanc',
       configuration: {
         friendlyName: 'local Orthanc DICOMWeb Server',
         name: 'DCM4CHEE',
@@ -193,7 +190,7 @@ window.config = {
     console.warn('test, navigate to https://ohif.org/');
   },
 
-    whiteLabeling: {
+  whiteLabeling: {
     createLogoComponentFn: function (React) {
       return React.createElement(
         'a',
