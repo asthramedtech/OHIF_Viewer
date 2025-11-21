@@ -91,7 +91,7 @@ window.config = {
       ],
     },
   ],
-  defaultDataSourceName: 'ohif',
+  defaultDataSourceName: 'asthra-orthanc',
   dataSources: [
     {
       namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
@@ -198,7 +198,6 @@ window.config = {
           target: '_self',
           rel: 'noopener noreferrer',
           className: 'text-purple-600 line-through',
-          href: '/',
         },
         React.createElement('img', {
           src: './asthra-logo.svg',
