@@ -150,7 +150,7 @@ window.config = {
       namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
       sourceName: 'asthra-orthanc',
       configuration: {
-        friendlyName: 'local Orthanc DICOMWeb Server',
+        friendlyName: 'Orthanc DICOMWeb Server',
         name: 'DCM4CHEE',
         wadoUriRoot: 'https://genai.asthramedtech.com/wado',
         qidoRoot: 'https://genai.asthramedtech.com/dicom-web',
