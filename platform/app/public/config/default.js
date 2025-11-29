@@ -190,20 +190,4 @@ window.config = {
     console.warn('test, navigate to https://ohif.org/');
   },
 
-  whiteLabeling: {
-    createLogoComponentFn: function (React) {
-      return React.createElement(
-        'a',
-        {
-          target: '_self',
-          rel: 'noopener noreferrer',
-          className: 'text-purple-600 line-through',
-        },
-        React.createElement('img', {
-          src: './asthra-logo.svg',
-          className: 'w-32 h-32',
-        })
-      );
-    },
-  },
 };
