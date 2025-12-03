@@ -4,7 +4,6 @@
 window.config = {
   name: 'config/default.js',
   routerBasename: null,
-  // whiteLabeling: {},
   extensions: [],
   modes: [],
   customizationService: {},
@@ -91,42 +90,17 @@ window.config = {
       ],
     },
   ],
-  defaultDataSourceName: 'asthra-orthanc',
+  defaultDataSourceName: 'production-orthanc',
   dataSources: [
     {
       namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
-      sourceName: 'ohif',
+      sourceName: 'asthra-orthanc',
       configuration: {
-        friendlyName: 'AWS S3 Static wado server',
-        name: 'aws',
-        wadoUriRoot: 'https://d14fa38qiwhyfd.cloudfront.net/dicomweb',
-        qidoRoot: 'https://d14fa38qiwhyfd.cloudfront.net/dicomweb',
-        wadoRoot: 'https://d14fa38qiwhyfd.cloudfront.net/dicomweb',
-        qidoSupportsIncludeField: false,
-        imageRendering: 'wadors',
-        thumbnailRendering: 'wadors',
-        enableStudyLazyLoad: true,
-        supportsFuzzyMatching: true,
-        supportsWildcard: false,
-        staticWado: true,
-        singlepart: 'bulkdata,video',
-        bulkDataURI: {
-          enabled: true,
-          relativeResolution: 'studies',
-          transform: url => url.replace('/pixeldata.mp4', '/rendered'),
-        },
-        omitQuotationForMultipartRequest: true,
-      },
-    },
-    {
-      namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
-      sourceName: 'orthanc',
-      configuration: {
-        friendlyName: 'local Orthanc DICOMWeb Server',
+        friendlyName: 'Orthanc DICOMWeb Server',
         name: 'DCM4CHEE',
-        wadoUriRoot: 'http://localhost:8042/wado',
-        qidoRoot: 'http://localhost:8042/dicom-web',
-        wadoRoot: 'http://localhost:8042/dicom-web',
+        wadoUriRoot: 'https://live.asthramedtech.com/wado',
+        qidoRoot: 'https://live.asthramedtech.com/dicom-web',
+        wadoRoot: 'https://live.asthramedtech.com/dicom-web',
         qidoSupportsIncludeField: true,
         supportsReject: true,
         dicomUploadEnabled: true,
@@ -145,10 +119,9 @@ window.config = {
         },
       },
     },
-
     {
       namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
-      sourceName: 'asthra-orthanc',
+      sourceName: 'production-orthanc',
       configuration: {
         friendlyName: 'Orthanc DICOMWeb Server',
         name: 'DCM4CHEE',
@@ -164,20 +137,9 @@ window.config = {
         supportsFuzzyMatching: true,
         supportsWildcard: true,
         omitQuotationForMultipartRequest: true,
-        // Authorization configuration
-        headers: {
-          Authorization: 'Basic ' + btoa('user:password'), // Replace with your credentials
-        },
         bulkDataURI: {
           enabled: true,
         },
-      },
-    },
-    {
-      namespace: '@ohif/extension-default.dataSourcesModule.dicomlocal',
-      sourceName: 'dicomlocal',
-      configuration: {
-        friendlyName: 'dicom local',
       },
     },
   ],
