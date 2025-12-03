@@ -90,13 +90,13 @@ window.config = {
       ],
     },
   ],
-  defaultDataSourceName: 'production-orthanc',
+  defaultDataSourceName: 'prod-orthanc',
   dataSources: [
     {
       namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
-      sourceName: 'asthra-orthanc',
+      sourceName: 'prod-orthanc',
       configuration: {
-        friendlyName: 'Orthanc DICOMWeb Server',
+        friendlyName: 'Orthanc Production Server',
         name: 'DCM4CHEE',
         wadoUriRoot: 'https://live.asthramedtech.com/wado',
         qidoRoot: 'https://live.asthramedtech.com/dicom-web',
@@ -121,7 +121,7 @@ window.config = {
     },
     {
       namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
-      sourceName: 'production-orthanc',
+      sourceName: 'dev-orthanc',
       configuration: {
         friendlyName: 'Orthanc DICOMWeb Server',
         name: 'DCM4CHEE',
@@ -151,5 +151,4 @@ window.config = {
     // Could use services manager here to bring up a dialog/modal if needed.
     console.warn('test, navigate to https://ohif.org/');
   },
-
 };
