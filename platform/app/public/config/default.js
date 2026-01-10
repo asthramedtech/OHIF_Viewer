@@ -7,7 +7,7 @@ window.config = {
   extensions: [],
   modes: [],
   customizationService: {},
-  showStudyList: false, // Direct study load, no browser
+  showStudyList: true, // Direct study load, no browser
   filterQueryParam: true, // Better StudyInstanceUIDs handling
   // some windows systems have issues with more than 3 web workers
   maxNumberOfWebWorkers: 3,
@@ -140,6 +140,31 @@ window.config = {
         bulkDataURI: {
           enabled: true,
         },
+      },
+    },
+    {
+      namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
+      sourceName: 'ohif',
+      configuration: {
+        friendlyName: 'AWS S3 Static wado server',
+        name: 'aws',
+        wadoUriRoot: 'https://d14fa38qiwhyfd.cloudfront.net/dicomweb',
+        qidoRoot: 'https://d14fa38qiwhyfd.cloudfront.net/dicomweb',
+        wadoRoot: 'https://d14fa38qiwhyfd.cloudfront.net/dicomweb',
+        qidoSupportsIncludeField: false,
+        imageRendering: 'wadors',
+        thumbnailRendering: 'wadors',
+        enableStudyLazyLoad: true,
+        supportsFuzzyMatching: true,
+        supportsWildcard: false,
+        staticWado: true,
+        singlepart: 'bulkdata,video',
+        bulkDataURI: {
+          enabled: true,
+          relativeResolution: 'studies',
+          transform: url => url.replace('/pixeldata.mp4', '/rendered'),
+        },
+        omitQuotationForMultipartRequest: true,
       },
     },
   ],
