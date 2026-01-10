@@ -7,7 +7,8 @@ window.config = {
   extensions: [],
   modes: [],
   customizationService: {},
-  showStudyList: true,
+  showStudyList: false, // Direct study load, no browser
+  filterQueryParam: true, // Better StudyInstanceUIDs handling
   // some windows systems have issues with more than 3 web workers
   maxNumberOfWebWorkers: 3,
   // below flag is for performance reasons, but it might not work for all servers
@@ -28,7 +29,6 @@ window.config = {
   investigationalUseDialog: {
     option: 'never',
   },
-  // filterQueryParam: false,
   // Defines multi-monitor layouts
   multimonitor: [
     {
@@ -90,7 +90,7 @@ window.config = {
       ],
     },
   ],
-  defaultDataSourceName: 'prod-orthanc',
+  defaultDataSourceName: 'dev-orthanc',
   dataSources: [
     {
       namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
@@ -125,9 +125,9 @@ window.config = {
       configuration: {
         friendlyName: 'Orthanc DICOMWeb Server',
         name: 'DCM4CHEE',
-        wadoUriRoot: 'https://genai.asthramedtech.com/wado',
-        qidoRoot: 'https://genai.asthramedtech.com/dicom-web',
-        wadoRoot: 'https://genai.asthramedtech.com/dicom-web',
+        wadoUriRoot: 'http://localhost:2000/wado',
+        qidoRoot: 'http://localhost:2000/dicom-web',
+        wadoRoot: 'http://localhost:2000/dicom-web',
         qidoSupportsIncludeField: true,
         supportsReject: true,
         dicomUploadEnabled: true,
