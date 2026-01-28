@@ -91,6 +91,7 @@ window.config = {
     },
   ],
   defaultDataSourceName: 'dev-orthanc',
+  // defaultDataSourceName: 'ohif',
   dataSources: [
     {
       namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
@@ -125,9 +126,9 @@ window.config = {
       configuration: {
         friendlyName: 'Orthanc DICOMWeb Server',
         name: 'DCM4CHEE',
-        wadoUriRoot: 'http://localhost:2000/wado',
-        qidoRoot: 'http://localhost:2000/dicom-web',
-        wadoRoot: 'http://localhost:2000/dicom-web',
+        wadoUriRoot: 'http://192.168.31.227:2000/wado',
+        qidoRoot: 'http://192.168.31.227:2000/dicom-web',
+        wadoRoot: 'http://192.168.31.227:2000/dicom-web',
         qidoSupportsIncludeField: true,
         supportsReject: true,
         dicomUploadEnabled: true,
