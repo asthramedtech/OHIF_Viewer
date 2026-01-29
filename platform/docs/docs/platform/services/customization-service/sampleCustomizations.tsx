@@ -1565,7 +1565,7 @@ export const studyBrowserCustomizations = [
     id: 'studyBrowser.studyMode',
     description:
       'Controls the study browser mode to determine whether to show all studies (including prior studies) or only the current study.',
-    default: `'all'`,
+    default: `'primary'`,
     configuration: `
 window.config = {
   // rest of window config

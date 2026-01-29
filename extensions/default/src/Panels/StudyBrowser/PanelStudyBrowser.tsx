@@ -27,7 +27,7 @@ function PanelStudyBrowser({
   const { servicesManager, commandsManager, extensionManager } = useSystem();
   const { displaySetService, customizationService } = servicesManager.services;
   const navigate = useNavigate();
-  const studyMode = customizationService.getCustomization('studyBrowser.studyMode') || 'all';
+  const studyMode = customizationService.getCustomization('studyBrowser.studyMode') || 'primary';
 
   const internalImageViewer = useImageViewer();
   const StudyInstanceUIDs = internalImageViewer.StudyInstanceUIDs;
