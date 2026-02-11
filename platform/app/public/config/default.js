@@ -90,7 +90,7 @@ window.config = {
       ],
     },
   ],
-  defaultDataSourceName: 'dev2-orthanc',
+  defaultDataSourceName: 'test-orthanc',
   dataSources: [
     {
       namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
@@ -101,6 +101,33 @@ window.config = {
         wadoUriRoot: 'https://live.asthramedtech.com/wado',
         qidoRoot: 'https://live.asthramedtech.com/dicom-web',
         wadoRoot: 'https://live.asthramedtech.com/dicom-web',
+        qidoSupportsIncludeField: true,
+        supportsReject: true,
+        dicomUploadEnabled: true,
+        imageRendering: 'wadors',
+        thumbnailRendering: 'wadors',
+        enableStudyLazyLoad: true,
+        supportsFuzzyMatching: true,
+        supportsWildcard: true,
+        omitQuotationForMultipartRequest: true,
+        // Authorization configuration
+        headers: {
+          Authorization: 'Basic ' + btoa('user:password'), // Replace with your credentials
+        },
+        bulkDataURI: {
+          enabled: true,
+        },
+      },
+    },
+    {
+      namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
+      sourceName: 'test-orthanc',
+      configuration: {
+        friendlyName: 'Orthanc Production Server',
+        name: 'DCM4CHEE',
+        wadoUriRoot: 'https://genai.asthramedtech.com/wado',
+        qidoRoot: 'https://genai.asthramedtech.com/dicom-web',
+        wadoRoot: 'https://genai.asthramedtech.com/dicom-web',
         qidoSupportsIncludeField: true,
         supportsReject: true,
         dicomUploadEnabled: true,
