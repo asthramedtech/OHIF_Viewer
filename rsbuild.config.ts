@@ -28,6 +28,9 @@ const OHIF_PORT = Number(process.env.OHIF_PORT || 3000);
 const OHIF_OPEN = process.env.OHIF_OPEN !== 'false';
 
 export default defineConfig({
+  performance: {
+    buildCache: false,
+  },
   source: {
     entry: {
       index: `${SRC_DIR}/index.js`,
@@ -51,6 +54,7 @@ export default defineConfig({
     rspack: {
       experiments: {
         asyncWebAssembly: true,
+         lazyCompilation: false,
       },
       module: {
         rules: [
