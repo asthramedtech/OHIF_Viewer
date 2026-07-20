@@ -98,9 +98,9 @@ window.config = {
       configuration: {
         friendlyName: 'Orthanc Production Server',
         name: 'DCM4CHEE',
-        wadoUriRoot: 'https://live.asthramedtech.com/wado',
-        qidoRoot: 'https://live.asthramedtech.com/dicom-web',
-        wadoRoot: 'https://live.asthramedtech.com/dicom-web',
+        wadoUriRoot: 'https://genai.asthramedtech.com/wado',
+        qidoRoot: 'https://genai.asthramedtech.com/dicom-web',
+        wadoRoot: 'https://genai.asthramedtech.com/dicom-web',
         qidoSupportsIncludeField: true,
         supportsReject: true,
         dicomUploadEnabled: true,
