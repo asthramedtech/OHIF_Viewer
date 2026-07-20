@@ -90,7 +90,7 @@ window.config = {
       ],
     },
   ],
-  defaultDataSourceName: 'dev-orthanc',
+  defaultDataSourceName: 'prod-orthanc',
   dataSources: [
     {
       namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
