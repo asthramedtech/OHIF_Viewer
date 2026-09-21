@@ -17,7 +17,7 @@
 // and customization loading enabled, see config/dev.js (local development) and
 // config/netlify.js (the public demo deploy).
 window.config = {
-  name: 'config/default.js',
+  name: 'config/dev.js',
   routerBasename: null,
   // whiteLabeling: {},
   extensions: [],
