@@ -13,7 +13,7 @@
 window.config = {
   name: 'config/dev.js',
   routerBasename: null,
-  // whiteLabeling: {},
+  whiteLabeling: {},
   extensions: [],
   modes: [],
   customizationService: ['@ohif/extension-default.customizationModule.theme'],
@@ -109,6 +109,9 @@ window.config = {
     },
   ],
   defaultDataSourceName: 'dev-orthanc',
+  investigationalUseDialog: {
+    option: 'never',
+  },
   /* Dynamic config allows user to pass "configUrl" query string this allows to load config without recompiling application. The regex will ensure valid configuration source */
   // dangerouslyUseDynamicConfig: {
   //   enabled: true,
