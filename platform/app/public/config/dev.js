@@ -16,7 +16,14 @@ window.config = {
   whiteLabeling: {},
   extensions: [],
   modes: [],
-  customizationService: ['@ohif/extension-default.customizationModule.theme'],
+  customizationService: [
+    '@ohif/extension-default.customizationModule.theme',
+    {
+      'studyBrowser.studyMode': {
+        $set: 'primary', // or recent
+      },
+    },
+  ],
 
   // URL-driven customizations (?customization=). The `default` prefix (no
   // slashes) is used for values without a leading slash; every other prefix
@@ -129,7 +136,7 @@ window.config = {
         wadoRoot: 'http://192.168.31.227:2000/dicom-web',
         qidoSupportsIncludeField: true,
         supportsReject: true,
-        dicomUploadEnabled: true,
+        dicomUploadEnabled: true,     
         imageRendering: 'wadors',
         thumbnailRendering: 'wadors',
         enableStudyLazyLoad: true,
