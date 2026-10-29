@@ -10,7 +10,10 @@ frontend:
         - pnpm install --frozen-lockfile
     build:
       commands:
+        - echo "APP_CONFIG=[$APP_CONFIG]"
+        - ls -l platform/app/public/config/
         - pnpm run build
+        - grep -o 'name:"[^"]*"' platform/app/dist/app-config.js | head -1
   artifacts:
     baseDirectory: platform/app/dist
     files:
